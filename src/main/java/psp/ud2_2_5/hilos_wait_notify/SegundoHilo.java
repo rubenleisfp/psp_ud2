@@ -8,11 +8,6 @@ class SegundoHilo extends Thread {
     }
 
     public void run() {
-        try {
-            Thread.sleep(3000);  // Simular un retraso antes de despertar al primer hilo
-            coordinador.despertar();  // El segundo hilo despierta al primer hilo
-        } catch (InterruptedException e) {
-            System.err.println(e.getMessage());
-        }
+        throw new UnsupportedOperationException("A implementar por el alummno");
     }
 }

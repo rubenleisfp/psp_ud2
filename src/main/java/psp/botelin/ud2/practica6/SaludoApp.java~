@@ -9,7 +9,7 @@ public class SaludoApp {
         Alumno carlitos = new Alumno(hola, "Carlitos");
 
         Profesor profesor = new Profesor(hola, "Ruben");
-
+        
         pedro.start();
         susana.start();
         andrea.start();

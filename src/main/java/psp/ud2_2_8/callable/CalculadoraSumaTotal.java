@@ -22,36 +22,6 @@ public class CalculadoraSumaTotal {
         String numHilosStr = sc.nextLine();
         int numHilos = Integer.parseInt(numHilosStr);
 
-
-        // Crear un ExecutorService
-        ExecutorService executor = Executors.newFixedThreadPool(4);
-
-        // Crear las subtareas
-        DividirRango dividirRango = new DividirRango();
-        List<Rango> rangos = dividirRango.dividir(rangoMinimo, rangoMaximo, numHilos);
-
-        List<Future<Integer>> resultados = new ArrayList<>();
-        for (Rango rango :  rangos) {
-            Callable<Integer> tarea = new SumaParcial(rango.getMinimo(), rango.getMaximo());
-            resultados.add(executor.submit(tarea));
-        }
-
-        // Recoger los resultados parciales
-        int sumaTotal = 0;
-        for (Future<Integer> resultado : resultados) {
-            try {
-                int resultadoParcial = resultado.get();
-                System.out.println("resultadoParcial: " + resultadoParcial);
-                sumaTotal += resultadoParcial;
-            } catch (InterruptedException | ExecutionException e) {
-                System.out.println();
-            }
-        }
-
-        // Imprimir el resultado final
-        System.out.println("La suma total es: " + sumaTotal);
-
-        // Apagar el ExecutorService
-        executor.shutdown();
+        throw new UnsupportedOperationException("A completar por el alumno");
     }
 }

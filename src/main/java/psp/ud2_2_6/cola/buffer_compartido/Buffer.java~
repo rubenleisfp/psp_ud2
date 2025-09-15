@@ -1,4 +1,4 @@
-package psp.ud2_2_6.buffer_compartido;
+package psp.ud2_2_6.cola.buffer_compartido;
 
 import java.util.LinkedList;
 import java.util.Queue;
