@@ -14,6 +14,7 @@ public class Atleta implements Runnable {
     @Override
     public void run() {
         throw new UnsupportedOperationException("A implementar por el alummno");
+
     }
 }
 

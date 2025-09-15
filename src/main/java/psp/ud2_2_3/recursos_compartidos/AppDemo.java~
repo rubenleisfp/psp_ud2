@@ -3,6 +3,7 @@ package psp.ud2_2_3.recursos_compartidos;
 public class AppDemo {
 
     public static void main(String [] args) throws InterruptedException {
+
             Counter counter = new Counter();
 
             ThreadDemo t1 = new ThreadDemo(counter);

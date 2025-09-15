@@ -3,6 +3,7 @@ package psp.ud2_2_1.hilos.herencia;
 public class ThreadApp {
 
     public static void main (String [] args) throws InterruptedException {
-        //throw new UnsupportedOperationException("A implementar por el alummno");
+    
+
     }
 }

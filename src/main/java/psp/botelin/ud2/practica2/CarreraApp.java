@@ -16,30 +16,7 @@ public class CarreraApp extends Thread {
         int numParticipantes = dato.nextInt();
         dato.nextLine();
 
-        List<Thread> atletaList = new ArrayList<>();
-        int i=0;
-        while (i<numParticipantes) {
-            System.out.println("Ingrese el nombre del primer atleta :" + i);
-            String nombre = dato.next();
-            Runnable atleta = new Atleta(nombre, numKms);
-            Thread thread1 = new Thread(atleta);
-            atletaList.add(thread1);
-            i++;
-        }
-
-        for (Thread thread: atletaList) {
-            thread.start();
-        }
-
-        for (Thread thread: atletaList) {
-            try {
-                thread.join();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
-
-        System.out.println("Carrera finalizada!");
+        throw new UnsupportedOperationException("A completar por el alummno");
     }
 
 

@@ -9,11 +9,6 @@ public class Coche extends Thread {
 
     @Override
     public void run() {
-        try {
-            semaforo.esperarLuzVerde();  // El coche espera a que el semáforo esté en verde
-            System.out.println("Coche: ¡Semáforo en verde, avanzando!");
-        } catch (InterruptedException e) {
-            System.err.println(e.getMessage());
-        }
+        throw new UnsupportedOperationException("A implementar por el alummno");
     }
 }

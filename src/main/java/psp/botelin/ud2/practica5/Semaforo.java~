@@ -5,11 +5,16 @@ public class Semaforo {
 
     // Método sincronizado para que el coche espere hasta que el semáforo esté en verde
     public synchronized void esperarLuzVerde() throws InterruptedException {
-        throw new UnsupportedOperationException("A implementar por el alummno");
+        while (!enVerde) {  // Mientras el semáforo no esté en verde, espera
+            System.out.println("Coche: Semáforo en rojo, esperando...");
+            wait();  // El coche espera hasta que sea notificado
+        }
     }
 
     // Método sincronizado para cambiar el semáforo a verde y notificar a los coches
     public synchronized void cambiarALuzVerde() {
-        throw new UnsupportedOperationException("A implementar por el alummno");
+        enVerde = true;  // Cambia el estado a verde
+        System.out.println("Semáforo: ¡Cambio a luz verde!");
+        notifyAll();  // Notifica a todos los coches que están esperando
     }
 }

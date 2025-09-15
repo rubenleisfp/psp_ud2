@@ -3,7 +3,7 @@ package psp.ud2_2_3.recursos_compartidos;
 class Counter {
     private int count = 0;
 
-    public synchronized void increment() {
+    public  void increment() {
         count++;
     }
 

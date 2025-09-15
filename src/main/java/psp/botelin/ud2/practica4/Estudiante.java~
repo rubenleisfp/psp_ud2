@@ -11,6 +11,7 @@ public class Estudiante implements Runnable {
 
     @Override
     public void run() {
-        throw new UnsupportedOperationException("A implementar por el alummno");
+        // Cada estudiante trata de usar el computador
+        salaEstudio.usarComputador(nombre);
     }
 }

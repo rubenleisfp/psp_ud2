@@ -9,12 +9,6 @@ public class ControlSemaforo extends Thread {
 
     @Override
     public void run() {
-        try {
-            // Simula que el semáforo tarda 3 segundos en cambiar a verde
-            Thread.sleep(3000);
-            semaforo.cambiarALuzVerde();  // Cambia el semáforo a verde
-        } catch (InterruptedException e) {
-            System.err.println(e.getMessage());
-        }
+        throw new UnsupportedOperationException("A implementar por el alummno");
     }
 }
