@@ -1,0 +1,56 @@
+package psp.ud2_2_8.callable;
+
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.concurrent.*;
+
+public class CalculadoraSumaTotal {
+
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Indique el valor minimo del rango: ");
+        String rangoMinimoStr = sc.nextLine();
+        int rangoMinimo = Integer.parseInt(rangoMinimoStr);
+        System.out.println("Indique el valor maximo del rango: ");
+        String rangoMaximoStr = sc.nextLine();
+        int rangoMaximo = Integer.parseInt(rangoMaximoStr);
+        System.out.println("Indique el numero de hilos del proceso: ");
+        String numHilosStr = sc.nextLine();
+        int numHilos = Integer.parseInt(numHilosStr);
+
+
+        // Crear un ExecutorService
+        ExecutorService executor = Executors.newFixedThreadPool(4);
+
+        // Crear las subtareas
+        DividirRango dividirRango = new DividirRango();
+        List<Rango> rangos = dividirRango.dividir(rangoMinimo, rangoMaximo, numHilos);
+
+        List<Future<Integer>> resultados = new ArrayList<>();
+        for (Rango rango :  rangos) {
+            Callable<Integer> tarea = new SumaParcial(rango.getMinimo(), rango.getMaximo());
+            resultados.add(executor.submit(tarea));
+        }
+
+        // Recoger los resultados parciales
+        int sumaTotal = 0;
+        for (Future<Integer> resultado : resultados) {
+            try {
+                int resultadoParcial = resultado.get();
+                System.out.println("resultadoParcial: " + resultadoParcial);
+                sumaTotal += resultadoParcial;
+            } catch (InterruptedException | ExecutionException e) {
+                System.out.println();
+            }
+        }
+
+        // Imprimir el resultado final
+        System.out.println("La suma total es: " + sumaTotal);
+
+        // Apagar el ExecutorService
+        executor.shutdown();
+    }
+}

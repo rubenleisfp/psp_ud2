@@ -1,0 +1,22 @@
+package psp.ud2_2_6.cola.productor_consumidor;
+
+class Productor extends Thread {
+    private Buffer buffer;
+
+    public Productor(Buffer buffer) {
+        this.buffer = buffer;
+    }
+
+    @Override
+    public void run() {
+        int valor = 0;
+        while (true) {
+            try {
+                buffer.producir(valor++);  // Producir un valor
+                Thread.sleep(1000);  // Simular el tiempo de producción
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}

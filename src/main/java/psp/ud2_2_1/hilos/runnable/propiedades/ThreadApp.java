@@ -1,0 +1,24 @@
+package psp.ud2_2_1.hilos.runnable.propiedades;
+
+
+public class ThreadApp {
+
+    public static void main (String [] args) throws InterruptedException {
+        long startTime = System.currentTimeMillis();
+
+        Runnable runnable1 = new MiHilo("ana", 1000);
+        Thread thread1 = new Thread(runnable1);
+        thread1.start();
+
+        Runnable runnable2 = new MiHilo("bea", 3000);
+        Thread thread2 = new Thread(runnable2);
+        thread2.start();
+
+        thread1.join();
+        thread2.join();
+
+        long endTime = System.currentTimeMillis() - startTime;
+        System.out.println("Done in: " + endTime);
+
+    }
+}

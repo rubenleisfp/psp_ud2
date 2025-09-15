@@ -1,0 +1,20 @@
+package psp.botelin.ud2.practica5;
+
+public class ControlSemaforo extends Thread {
+    private Semaforo semaforo;
+
+    public ControlSemaforo(Semaforo semaforo) {
+        this.semaforo = semaforo;
+    }
+
+    @Override
+    public void run() {
+        try {
+            // Simula que el semáforo tarda 3 segundos en cambiar a verde
+            Thread.sleep(3000);
+            semaforo.cambiarALuzVerde();  // Cambia el semáforo a verde
+        } catch (InterruptedException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+}

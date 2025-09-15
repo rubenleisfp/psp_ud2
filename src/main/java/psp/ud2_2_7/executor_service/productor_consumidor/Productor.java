@@ -1,0 +1,25 @@
+
+package psp.ud2_2_7.executor_service.productor_consumidor;
+
+class Productor implements Runnable {
+    private Buffer buffer;
+
+    public Productor(Buffer buffer) {
+        this.buffer = buffer;
+    }
+
+    @Override
+    public void run() {
+        int valor = 0;
+        while (true) {
+            try {
+                buffer.producir(valor++);  // Producir un valor
+                Thread.sleep(2000);  // Simular el tiempo de producción
+            } catch (InterruptedException e) {
+                System.err.println(e.getMessage());
+                Thread.currentThread().interrupt(); // Restaurar el estado de interrupción
+                break;
+            }
+        }
+    }
+}
