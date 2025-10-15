@@ -1,0 +1,44 @@
+1. Lavandería compartida
+
+Proceso: La lavandería.
+
+Hilos: Cada persona que lava su ropa.
+
+Recurso compartido: Las lavadoras y secadoras.
+Si dos personas intentan usar la misma lavadora al mismo tiempo, una tendrá que esperar a que la otra termine. Si no se coordinan, podrían mezclar sus ropas (error o “condición de carrera”).
+
+2. Oficina con una impresora
+
+Proceso: La oficina.
+
+Hilos: Cada empleado que envía documentos a imprimir.
+
+Recurso compartido: La impresora.
+Si todos los empleados mandan sus trabajos a la vez sin control, la impresora puede atascarse o imprimir documentos mezclados (problema de sincronización).
+
+3. Cruce sin semáforo
+
+Proceso: El cruce.
+
+Hilos: Los coches que llegan desde distintas direcciones.
+
+Recurso compartido: El espacio del cruce.
+Si todos los coches intentan pasar al mismo tiempo, se produce un choque. El semáforo actúa como un mecanismo de sincronización (similar a synchronized o un semáforo en programación).
+
+4. Alumnos usando un mismo ordenador del aula
+
+Proceso: El aula de informática.
+
+Hilos: Los alumnos.
+
+Recurso compartido: El ordenador o los periféricos (ratón, teclado).
+Si varios intentan teclear o mover el ratón al mismo tiempo, el sistema no sabría qué acción ejecutar (condición de carrera).
+
+5. Cajero automático
+
+Proceso: El sistema bancario.
+
+Hilos: Los clientes realizando operaciones simultáneamente.
+
+Recurso compartido: El saldo de una cuenta.
+Si dos cajeros procesan retiradas de la misma cuenta sin control, podrían permitir sacar más dinero del disponible (inconsistencia de datos).
