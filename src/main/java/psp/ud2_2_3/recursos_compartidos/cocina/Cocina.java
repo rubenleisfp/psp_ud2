@@ -12,7 +12,7 @@ class Cocina {
     public synchronized void usarCuchillo(String cocinero) {
         System.out.println(cocinero + " está usando el cuchillo.");
         try {
-            Thread.sleep(2000); // Simular el uso del cuchillo
+            Thread.sleep(4000); // Simular el uso del cuchillo
         } catch (InterruptedException e) {
             System.err.println(e.getMessage());
         }

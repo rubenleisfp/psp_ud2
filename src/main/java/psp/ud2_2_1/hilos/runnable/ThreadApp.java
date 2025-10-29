@@ -4,6 +4,8 @@ package psp.ud2_2_1.hilos.runnable;
 public class ThreadApp {
 
     public static void main(String[] args) throws InterruptedException {
-        throw new UnsupportedOperationException("A implementar por el alummno");
+        Runnable h1 = new MiHilo();
+        Thread thread = new Thread(h1);
+        thread.start();
     }
 }

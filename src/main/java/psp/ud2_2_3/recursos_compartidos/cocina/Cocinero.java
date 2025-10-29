@@ -10,6 +10,7 @@ class Cocinero extends Thread {
     }
 
     public void run() {
+
         cocina.usarCuchillo(nombre);
     }
 }

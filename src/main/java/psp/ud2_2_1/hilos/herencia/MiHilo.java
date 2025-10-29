@@ -1,5 +1,8 @@
 package psp.ud2_2_1.hilos.herencia;
 
-public class MiHilo {
- //throw new UnsupportedOperationException("A implementar por el alummno");
+public class MiHilo extends Thread{
+
+    public void run() {
+        System.out.println("Mariam va a Dirección a por un parte...");
+    }
 }

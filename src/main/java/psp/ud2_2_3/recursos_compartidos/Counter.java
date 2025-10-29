@@ -1,14 +1,16 @@
 package psp.ud2_2_3.recursos_compartidos;
 
-class Counter {
-    private int count = 0;
+import java.util.concurrent.atomic.AtomicInteger;
 
-    public  void increment() {
-        count++;
+class Counter {
+    private AtomicInteger count = new AtomicInteger(0);
+
+    public void increment() {
+        count.set(count.get() +1);
     }
 
     public int getCount() {
-        return count;
+        return count.get();
     }
 }
 

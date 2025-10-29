@@ -8,6 +8,11 @@ class PrimerHilo extends Thread {
     }
 
     public void run() {
-        throw new UnsupportedOperationException("A implementar por el alummno");
+        try {
+            coordinador.esperar();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
+
 }

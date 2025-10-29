@@ -12,7 +12,19 @@ public class Atleta implements Runnable {
 
     @Override
     public void run() {
-        throw new UnsupportedOperationException("A implementar por el alummno");
+        Random rand = new Random();
+
+        for (int km = 1; km <=30 ; km++) {
+            int tiempo = rand.nextInt(1000);
+            try {
+                Thread.sleep(tiempo);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println(nombre + " está en el km: " + km);
+        }
+        System.out.println("Carrera finalizada por: " + nombre);
+
     }
 }
 

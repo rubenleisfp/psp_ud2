@@ -1,7 +1,7 @@
 package psp.ud2_2_3.recursos_compartidos.cocina;
 
 public class CocinaMultihilo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Cocina cocina = new Cocina();
 
         // Crear tres cocineros (hilos) que comparten la misma cocina
@@ -14,7 +14,7 @@ public class CocinaMultihilo {
         cocinero2.start();
         cocinero3.start();
 
-       //monitorizarCocineros(cocinero1, cocinero2, cocinero3);
+       monitorizarCocineros(cocinero1, cocinero2, cocinero3);
 
     }
 

@@ -13,9 +13,9 @@ class Productor extends Thread {
         while (true) {
             try {
                 buffer.producir(valor++);  // Producir un valor
-                Thread.sleep(1000);  // Simular el tiempo de producción
+                Thread.sleep(3000);  // Simular el tiempo de producción
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                System.err.println(e.getMessage());
             }
         }
     }

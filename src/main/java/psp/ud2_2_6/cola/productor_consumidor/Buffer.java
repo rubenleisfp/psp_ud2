@@ -41,7 +41,7 @@ class Buffer {
         int valor = cola.poll();
         System.out.println("Consumidor consumió elemento (indice): " + valor);
         System.out.println("Tamaño buffer:" + cola.size());
-        //notifyAll();  // Notificar a los productores que hay espacio disponible
+        notifyAll();  // Notificar a los productores que hay espacio disponible
         return valor;
     }
 }

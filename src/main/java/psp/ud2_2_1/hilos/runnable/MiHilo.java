@@ -3,6 +3,6 @@ package psp.ud2_2_1.hilos.runnable;
 public class MiHilo implements Runnable {
  
   public void run(){
-      throw new UnsupportedOperationException("A implementar por el alummno");
+      System.out.println("Hilo en ejecución");
   }
 }
